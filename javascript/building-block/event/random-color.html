@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Random color example — event handler property</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+    <script>
+      const btn = document.querySelector('button');
+      
+      function random(value) {
+        return Math.floor(Math.random()*(value));
+      }
+
+      function bgChange(e) {
+        const rdColor = `rgb(${random(255)},${random(255)},${random(255)})`;
+        e.target.style.backgroundColor = rdColor;
+        console.log(e);
+      }
+      function alertHi() {
+        alert('hi');
+      }
+
+      btn.addEventListener('mouseout', bgChange);
+    </script>
+  </body>
+</html>

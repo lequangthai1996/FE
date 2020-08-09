@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function fetchAndDecode(url, type) {
+      return fetch(url)
+        .then(res => {
+          if(type === 'blob') {
+            return res.blob();
+          } else if(type === 'text' ) {
+            return res.text();
+          }
+        }).catch(err => {
+          console.log(`There is an error when fetch url ${url}: ${err.message}`);
+        }).finally( () => {
+          console.log(`fetch ${url} completed`);
+        })
+    }
+
+    let promise1 = fetchAndDecode('coffee1.jpg', 'blob');
+    let promise2 = fetchAndDecode('tea.jpg', 'blob');
+    let promise3 = fetchAndDecode('description.txt', 'text');
+
+    Promise.all([promise1, promise2, promise3]).then(values => {
+      console.log(values[2]);
+      let objectURL1 = URL.createObjectURL(values[0]);
+      let objectURL2 = URL.createObjectURL(values[1]);
+      let descText = values[2];
+
+      // Display the images in <img> elements
+      let image1 = document.createElement('img');
+      let image2 = document.createElement('img');
+      image1.src = objectURL1;
+      image2.src = objectURL2;
+      document.body.appendChild(image1);
+      document.body.appendChild(image2);
+
+      // Display the text in a paragraph
+      let para = document.createElement('p');
+      para.textContent = descText;
+      document.body.appendChild(para);
+    }).catch(err=> {
+      console.log('all error: ' + err.message);
+    })
+  </script>
+</body>
+</html>

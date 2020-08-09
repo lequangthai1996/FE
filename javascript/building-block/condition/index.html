@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="weather">Select the weather type today: </label>
+  <select id="weather">
+    <option value="">Select a choice</option>
+    <option value="sunny">Sunny</option>
+    <option value="rainy">Rainy</option>
+    <option value="snow">Sunny</option>
+  </select>
+  <p></p>
+  <script> 
+    const selectRef = document.getElementById('weather');
+    const infor = document.querySelector('p');
+    selectRef.addEventListener('change', function() {
+      switch(selectRef.value) {
+      case 'sunny': infor.textContent = 'You choose sunny'; break;
+      case 'rainy': infor.textContent = 'You choose rainy'; break;
+      case 'snow': infor.textContent  = 'You choose snow'; break;
+      default : infor.textContent = '';
+    }
+    });
+  </script>
+</body>
+</html>

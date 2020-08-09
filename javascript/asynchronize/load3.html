@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let promise1 = fetch('download3.jpeg');
+    // let promise2 = promise1.then(response => response.blob());
+    // let promose3 = promise2.then(myBlob => {
+    //   let objectURL = URL.createObjectURL(myBlob);
+    //   let imageElm = document.createElement('img');
+    //   imageElm.src = objectURL;
+    //   document.body.appendChild(imageElm);
+    // });
+
+    // let errorCase = promise3.catch(e => {
+    //   console.log('There has been a problem with your fetch operation: ' + e.message);
+    // });
+
+
+    fetch('download3.jpeg')
+      .then(response => response.blob())
+      .then(myBlob => {
+        let objectURL = URL.createObjectURL(myBlob);
+        let image = document.createElement('img');
+        image.src = objectURL;
+        document.body.appendChild(image);
+      }).catch(e => {
+        console.log('There has been a problem with your fetch operation: ' + e.message);
+      });
+
+  </script>
+</body>
+
+</html>

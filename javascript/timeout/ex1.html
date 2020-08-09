@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Give someone a greeting!</h1>
+  <label for="">Enter a name</label>
+  <input type="text"><br/>
+  <div>
+    <button id="greet">Greeting</button><br/><br/>
+    <button id="cancel">Cancel Greeting</button>
+  </div>
+  <script>
+    const inputName = document.querySelector('input');
+    const greet = document.getElementById('greet');
+    const cancel = document.getElementById('cancel');
+
+    inputName.focus();
+    cancel.disabled = true;
+    let greeting;
+
+    function sayHello(who) {
+      alert(`Hello ${who}`);
+      cancel.disabled = true;
+    }
+
+    greet.onclick = function() {
+      cancel.disabled = false;
+      greeting = setTimeout(sayHello, 5000, inputName.value);
+    }
+
+    cancel.onclick = function() {
+      clearTimeout(greeting);
+      cancel.disabled = true;
+    }
+  </script>
+</body>
+</html>

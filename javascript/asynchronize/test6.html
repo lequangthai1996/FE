@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log('start');
+    let image;
+    
+    fetch('coffee.jpg').then((res) => {
+      console.log('it worked');
+      return res.blob();
+    }).then((blob) => {
+      let objectURL = URL.createObjectURL(blob);
+      image = document.createElement('img');
+      image.src = objectURL;
+      document.body.appendChild(image);
+    }).catch( (err) => {
+      console.log(err.message);
+    })
+    console.log('end');
+  </script>
+</body>
+</html>

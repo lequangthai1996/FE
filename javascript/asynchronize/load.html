@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    function loadAsset(url, type, callback) {
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.responseType = type;
+
+      xhr.onload = function() {
+        console.log(xhr);
+        console.log(xhr.response);
+        callback(xhr.response);
+      }
+
+      xhr.send();
+    }
+
+    function displayImage(blob) {
+      console.log(blob);
+      let objectUrl = URL.createObjectURL(blob);
+      console.log(objectUrl);
+      let imgElm = document.createElement('img');
+      imgElm.src = objectUrl;
+      document.body.appendChild(imgElm);
+    }
+
+    loadAsset('download.jpeg', 'blob', displayImage);
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="demo"></p>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <button id="reset">Reset</button>
+  <script>
+    const demo = document.getElementById('demo');
+    const start = document.getElementById('start');
+    const stop = document.getElementById('stop');
+    const reset = document.getElementById('reset');
+    let totalSecond = 0;
+    let hour;
+    let minute;
+    let second;
+
+    let clock;
+    showTime();
+    function showTime() {
+      // increment after 1s
+      hour = Math.floor(totalSecond/3600);
+      minute = Math.floor((totalSecond%3600)/60);
+      second = Math.floor(totalSecond%60);
+      
+      hour = hour < 10 ? `0${hour}`  : hour;
+      minute = minute < 10 ? `0${minute}`  : minute;
+      second = second < 10 ? `0${second}`  : second;
+
+      demo.textContent = hour+ ":" + minute + ":" + second;
+      totalSecond += 1;
+    }
+    
+    start.addEventListener('click', function() {
+      clock = setInterval(showTime, 1000);
+      start.disabled = true;
+    })
+
+    stop.addEventListener('click', () => {
+      clearInterval(clock);
+      start.disabled = false;
+    })
+
+    reset.addEventListener('click', () => {
+      clearInterval(clock);
+      totalSecond = 0;
+      showTime();
+      start.disabled = false;
+    })
+  </script>
+</body>
+</html>

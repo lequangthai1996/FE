@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="">Enter a number</label>
+  <input type="text">
+  <button>Generate interger squares</button>
+  <p></p>
+  <script>
+    const btn = document.querySelector('button');
+    const inputRef = document.querySelector('input');
+    const para = document.querySelector('p');
+
+    btn.onclick = function () {
+      para.textContent = '';
+      let inputValue = Number(inputRef.value);
+      if(inputValue != NaN) {
+        for(let i = 1; i <= inputValue; i++) {
+          let squaresOf = Math.sqrt(i);
+          if(Math.floor(squaresOf) != squaresOf) {
+            continue;
+          }
+          para.textContent += i + ' ';
+        }
+      } else {
+        para.textContent = '';
+      }
+    }
+  </script>
+</body>
+</html>

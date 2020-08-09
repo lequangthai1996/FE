@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+    <script>
+    const header = document.querySelector('header');
+    const section = document.querySelector('section');
+    
+    let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'text';
+    request.send();
+    request.onload = function() {
+      const superHeroesText = request.response;
+      console.log(typeof superHeroesText)
+      const superHeroes = JSON.parse(superHeroesText);
+      console.log(typeof superHeroes);
+      populateHeader(superHeroes);
+      showHeroes(superHeroes);
+    }
+
+    function populateHeader(jsonObject) {
+      const myH1 = document.createElement('h1');
+      myH1.textContent = jsonObject['squadName'];
+      header.appendChild(myH1);
+
+      const myPara = document.createElement('p');
+      myPara.textContent = 'Hometown: ' + jsonObject['homeTown'] + ' // Formed: ' + jsonObject['formed'];
+      header.appendChild(myPara);
+    }
+
+    function showHeroes(jsonObject) {
+      // get response
+      // for all heroes -> article = {h2+ p+ p + p + ul{for power}}
+      const listHeroes = jsonObject['members'];
+      
+      for(let i = 0; i < listHeroes.length; i++) {
+        const articleElm = document.createElement('article');
+        const h2Elm = document.createElement('h2');
+        const p1Elm = document.createElement('p');
+        const p2Elm = document.createElement('p');
+        const p3Elm = document.createElement('p');
+        const ulElm = document.createElement('ul');
+
+        h2Elm.textContent = listHeroes[i]['name'];
+        p1Elm.textContent = 'Secret Identity: ' + listHeroes[i]['secretIdentity'];
+        p2Elm.textContent = 'Age: ' + listHeroes[i]['age'];
+        p3Elm.textContent = 'Superpowers: ';
+        
+        // show power for each hero
+        const powers = listHeroes[i]['powers'];
+        for(let j = 0; j < powers.length; j++) {
+          const liElm = document.createElement('li');
+          liElm.textContent = powers[j];
+          ulElm.appendChild(liElm);
+        }
+        
+        // append content to article
+        articleElm.appendChild(h2Elm);
+        articleElm.appendChild(p1Elm);
+        articleElm.appendChild(p2Elm);
+        articleElm.appendChild(p3Elm);
+        articleElm.appendChild(ulElm);
+
+        section.appendChild(articleElm);
+      }
+         
+    }
+
+
+    </script>
+  </body>
+</html>

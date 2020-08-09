@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="output">
+    <input type="text">
+    <button>Search</button>
+    <ul></ul>
+  </div>
+  <script>
+    const inputElement = document.querySelector('.output input');
+    const buttonElement = document.querySelector('.output button');
+    const list = document.querySelector('.output ul');
+    let arrResult = [];
+    inputElement.focus();
+    buttonElement.addEventListener('click', implSearch);
+    function implSearch() {
+      let inputValue = inputElement.value;
+      if(inputValue === '') {
+        return;
+      }
+      if(arrResult.length >= 5) {
+        arrResult.pop();
+        arrResult.unshift(inputValue);
+      } else {
+        arrResult.unshift(inputValue);
+      }
+
+      list.textContent = '';
+      for(let i = 0; i < arrResult.length; i++) {
+        let item = document.createElement('li');
+        item.textContent = arrResult[i];
+        list.appendChild(item);
+      }
+      inputElement.value = '';
+      inputElement.focus();
+    }
+  </script>
+</body>
+</html>

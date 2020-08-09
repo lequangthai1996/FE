@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="">Enter url:</label><input type="text">
+  <button type="button">Change Content</button>
+
+  <script>
+    const btn = document.querySelector('button');
+    const inputElm = document.querySelector('input');
+    btn.addEventListener('click', loadUrl);
+    function loadUrl() {
+      let response = setTimeout(callAjax('GET', ''), 3000);
+      document.body.innerHTML = response;
+    }
+  function callAjax(method, body) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open(method, body);
+    xhttp.setRequestHeader('Authorization', 'xxxabcd1234');
+
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        return this.response;
+      }
+    }
+  }
+  </script>
+</body>
+</html>

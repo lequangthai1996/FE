@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text-red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    {{message.toUpperCase()}}
+    <p>Phuong thuc getSite tra ve: {{ getSite() }}</p>
+    <h1 v-html="message"></h1>
+    <p v-bind:class="className" v-bind:style="styleData">Ahihi</p>
+    <img v-bind:src="logoUrl">
+  </div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Welcom to Vujs',
+      className: 'text-red',
+      styleData: 'text-align: center',
+      logoUrl: './images/download.jpeg'
+    },
+    methods: {
+      getSite: function() {
+        return 'vnexpress.net' + this.message;
+      }
+    }
+  })
+</script>
+</html>

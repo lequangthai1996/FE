@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form>
+    <div>
+      <label for="fname">FirstName:</label>
+      <input type="text" id="fname">
+    </div>
+    <div>
+      <label for="lname">LastName:</label>
+      <input type="text" id="lname">
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+  <p></p>
+  <script>
+    const fname = document.getElementById('fname');
+    const lname = document.getElementById('lname');
+    const form = document.querySelector('form');
+    const para = document.querySelector('p');
+
+    form.onsubmit = function(e) {
+      let fnameV =  fname.value;
+      let lnameV = lname.value;
+      if(lnameV === '' || fnameV === '') {
+        e.preventDefault();
+        para.textContent = 'You need fill in both names';
+        para.style.backgroundColor = 'red';
+      }
+    }
+    fname.on = function(e) {
+      if(fname.value === '') {
+        para.textContent = 'first name must not empty';
+        fname.focus();
+      }
+    }
+    lname.onmouseout = function(e) {
+      if(lname.value === '') {
+        para.textContent = 'last name must not empty';
+        lname.focus();
+        e.stopPropagation();
+      }
+    }
+  </script>
+</body>
+</html>

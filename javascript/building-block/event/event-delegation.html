@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      margin-bottom: 20px;
+      border: 5px solid blue;;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>A</li>
+    <li>B</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul');
+    ul.onclick = function(e) {
+      console.log(e);
+      prompt('You click an item');
+    }
+
+    // const liRefs = document.querySelectorAll('li');
+    // liRefs.forEach(function(item) {
+    //   item.onclick = function(e) {
+    //     e.stopPropagation();
+    //   }
+    // })
+  </script>
+</body>
+</html>

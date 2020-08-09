@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p id="demo"></p>
+  <div class="control">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">End</button>
+  </div>
+  <script>
+    let hour; let minute;  let second;
+    let dem = 0;
+    let timeOut;
+    let timOut2;
+    const start = document.getElementById('start');
+    const stop = document.getElementById('stop');
+    const reset = document.getElementById('reset');
+    const demo = document.getElementById('demo');
+    function displayTime() {
+      hour = Math.floor(dem/3600);
+      minute = Math.floor((dem%3600)/60);
+      second = Math.floor(dem%60);
+      
+      hour = hour < 10 ? `0${hour}`  : hour;
+      minute = minute < 10 ? `0${minute}`  : minute;
+      second = second < 10 ? `0${second}`  : second;
+      demo.textContent = hour+ ":" + minute + ":" + second;
+      dem++;
+    }
+    
+    function timOut2() {
+      displayTime();
+      setTimeout(timOut2, 1000);
+    }
+    start.addEventListener('click', () => {
+      timeOut = setTimeout(timOut2, 1000)
+    })
+    stop.addEventListener('click', () => {
+      clearTimeout(timeOut);
+    })
+    reset.addEventListener('click', () => {
+      clearTimeout(timeOut);
+      dem  = 0;
+      displayTime();
+    })
+  </script>
+</body>
+
+</html>

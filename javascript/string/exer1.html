@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="output">
+    <ul></ul>
+    <p></p>
+  </div>
+  <script>
+    const list = document.querySelector('.output ul');
+    const totalBox = document.querySelector('.output p');
+    let total = 0;
+    list.innerHTML = '';
+    totalBox.textContent = '';
+
+    let products = ['Underpants:6.99',
+    'Socks:5.99',
+    'T-shirt:14.99',
+    'Trousers:31.99',
+    'Shoes:23.99'];
+
+    for(let i = 0; i < products.length; i++) {
+      let pro = products[i];
+      let proArr = pro.split(':');
+      let proName = proArr[0];
+      let proPrice = proArr[1];
+      let proTarget = proName + ' -- ' + proPrice;
+      total += Number(proPrice);
+      let item = document.createElement('li');
+      item.textContent = proTarget;
+      list.appendChild(item);
+    }
+    totalBox.textContent = 'Total:$' + total.toFixed(2);
+
+  </script>
+</body>
+</html>

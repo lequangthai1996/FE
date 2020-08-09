@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let x = 1;
+    function a(){
+      let y = 2;
+      output(x);
+    }
+    function b() {
+      let z = 3;
+      output(x);
+    }
+
+    function output(value) {
+      const para = document.createElement('p');
+      para.textContent = 'Value: ' + value;
+      document.body.appendChild(para);
+    }
+  </script>
+</body>
+</html>

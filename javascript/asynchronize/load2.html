@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log('start');
+    let imgElm;
+    
+    fetch('download.jpeg').then((response) => {
+      console.log('It worked');
+      // return response.blob();
+    }).then((blob) => {
+      let objectUrl = URL.createObjectURL(blob);
+      imgElm = document.createElement('img');
+      imgElm.src = objectUrl;
+      document.body.appendChild(imgElm);
+    }).then(() => {
+      console.log('All done');
+      console.log('src ' + imgElm.src);
+    }).catch((err) => {
+      console.log(`There is has a problem: ${err.message}`);
+    });
+
+  </script>
+</body>
+</html>

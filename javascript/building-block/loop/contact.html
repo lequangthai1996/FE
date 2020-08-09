@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <label for="search">Search by contact name: </label>
+  <input id="search" type="text">
+  <button>Search</button>
+  
+  <p></p>
+  <script>
+      const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+      const searchRef = document.getElementById('search');
+      const btn = document.querySelector('button');
+      const result = document.querySelector('p');
+      btn.addEventListener('click', searchContact);
+      
+      function searchContact() {
+        let key = searchRef.value.toLowerCase();
+        if(key !== '') {
+          let check = false;
+          for(let i = 0; i < contacts.length; i++) {
+            let splitName = contacts[i].split(':')[0];
+            if(splitName.toLowerCase() === key) {
+              result.textContent = splitName + "'snumber is " + contacts[i].split(':')[1];
+              check = true;
+              break;
+            }
+          }
+          if(!check) {
+            result.textContent = 'Contact not found';
+          }
+        } else {
+          result.textContent = '';
+        }
+      }
+  </script>  
+</body>
+</html>
