@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-size: 20px;
+    }
+    a {
+      border: 5px solid black;
+      margin-left: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 10px;
+      padding-top: 60px;
+    }
+    p#p1 {
+      border: 5px solid black;
+      width: 200px;    
+    }
+    p#p2 {
+      width: 300px; /* Vì set width cho the block box nên content của nó được xuống dòng khi không đủ khoảng trắng*/
+      border: 5px solid black;
+    }
+    #sp1 {
+      color: blue;
+      border: 5px solid black;
+      margin-right: 10px;
+      margin-left: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-top: 20px; /* margin top ở inline box không có tác dụng */
+    }
+    #sp2 {
+      border: 5px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">
+    <p id="p1">Ahihi Day la the p</p>
+    <a href="">vnexpress</a>
+    <span id="sp1">HTML</span>
+    <span id="sp2">Ahihi Do Ngoz</span>
+    <p>Inline box: vertical margin ko có tác dụng với box nào cả, vertical padding chỉ padding content với border của nó, 
+      nhưng không làm cho những box khác bị đẩy ra xa
+    </p>
+    <p style = "padding-right: 157px; border: 5px solid black;">Inline box: horizontal margin/padding đẩy các inline box khác ra xa nó</p>
+    <p id="p2">Vì set width cho the block box nên content của nó được xuống dòng khi không đủ khoảng trắng</p>
+    <p>Ta thấy rằng: #p1 này là block nên width của nó được tôn trọng : 200px, border của nó vẫn OK, nhưng nó tự có margin trên dưới 1em  (ở đây là 20p) Theo user agent stylesheet và cũng không có thằng inline box nào chèn được vô vị trí còn thừa của nó của, vì nó chiếm hết toàn bộ container của nó , chỉ có phần content của nó là 200*23 : Ahihi Day la the p.  …..: Thêm một khoảng trắng phía sau của đoạn văn nữa.
+    </p>
+  </div>
+</body>
+</html>
