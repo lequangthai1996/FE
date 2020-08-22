@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      color: blue;
+    }
+    #ahihi {
+      color: red;
+    }
+    #ahihi h2 {
+      color: inherit
+    }
+    a {
+      color: inherit; /*initial => tuỳ theo browser*/
+    }
+    body {
+      /* color: blue; Khi set blue => the ahihi có màu blue vì nó inherit*/ 
+    }
+  </style>
+</head>
+<body>
+  <div id="ahihi">
+    <h2>abczyz</h2>
+  </div>
+  <p>Ta thấy rằng #ahihi h2 có độ specific cao hơn h2 nên màu sắc của h2 trong nó được áp dụng : inherit</p>
+    <p>Tức là thừa kế từ cha nó, vì ta set #ahihi có màu red nên h2 trong ahihi có màu đỏ. </p>
+    <p>Nếu bỏ màu trong #ahihi đi thì màu sắc của h2 trong ahihi sẽ là initial tuỳ theo browser: tham chiếu</p>
+    <p>css properties để rõ hơn. </p>
+    <a href="">ahihi</a>
+    <p>Khi thẻ a có color:initial => nó lấy màu khởi động của browser, color:inherit => nó lấy
+      màu của thằng cha nó, mà cha nó ở đây là body => html
+    </p>
+</body>
+</html>
