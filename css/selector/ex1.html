@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      display: inline-block;
+      padding: 20px;
+      background-color: aqua;
+      margin-top: 20px;
+      margin-right: 5px;
+    }
+    a[title] {
+      border: 5px solid black;
+    }
+    a[href="24h.com.vn"] {
+      border: 5px solid blue;
+    }
+    a:hover {
+      background-color: white;
+    }
+    p::first-line {
+      color: red;
+    }
+    ul li:nth-child(2n) {
+      background-color: blue;
+    }
+    ul li:nth-child(2n + 1) {
+      background-color: chartreuse;
+    }
+    ul li[class="mimi"] {
+      background-color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <a href="" title="ahihi">Vnepress</a>
+  <a href="24h.com.vn">24h.com.vn</a>
+  <a href="">google.com.vn</a>
+  <p>AhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiA
+    hihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhih
+    iAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihiAhihi
+  </p>
+  <ul>
+    <li>Li 1</li>
+    <li class="mimi">Li 2</li>
+    <li>Li 3</li>
+    <li>Li 4</li>
+    <li>Li 5</li>
+    <li>Li 6</li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      color: red; /*color of root element if no specify will initial with initial value : this value  depend on browser : rgb(0,0,0) on chrome*/
+    }
+    p.specify{
+      color: green;
+    }
+    em {
+      color: inherit; /* inherit from parent => color of p*/
+      color: initial; /* folow : color reference: varies depend on browser, chrome will be rgb(0,0,0)*/
+    }
+  </style>
+</head>
+<body>
+  <p class="specify">Xin chao day la <em>emphasized text</em> toi la quang thai le</p>
+  <p class="inherit">inherit : color depend of parent => root element[html element](color of root element is initialize depend on browser)</p>
+</body>
+</html>

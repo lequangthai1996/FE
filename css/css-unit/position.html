@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 400px;
+      height: 400px;
+      border: 1px solid black;
+      /* background: url -> position / bg-size bg-repeat , bg-color */
+      background: url('../images/start2.png') right 300px no-repeat, #938d9c; /*right , 300px from top*/
+      background: url('../images/start2.png') top 100px right 300px no-repeat, #938d9c; /*top, 100px from right*/
+      background: url('../images/start2.png') bottom center no-repeat, #938d9c;  /* bottom of box (vertical), center of horizontal*/
+      background: url('../images/start2.png') 100px 200px no-repeat, #a18282; /*100px from left, 200px from top*/
+      background: url('../images/start2.png') top 20% center no-repeat, #a18282; /* 20% from top(20% width of content of container) and center of horizontal*/
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+  </div>
+</body>
+</html>
