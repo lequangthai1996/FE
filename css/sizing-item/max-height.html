@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 1000px;
+      border: 5px solid black;
+    }
+    img {
+      /* width: 100%; img có kích thước nội tại: 800px*450px, nhưng khi set width = 100% 
+      thì chiều rộng sẽ tăng lên 200px => 200px/800px = 0.25 = 25%, suy ra chiều cao cũng giãn ra
+      25% tức là: 0.25*450= 112.5 => tổng chiều cao là 450+ 112.5 = 562.5px, bức ảnh sẽ giãn ra và trông xấu.*/
+      max-width: 100%; /*nếu bức ảnh lớn hơn container của nó(width of box = 500px) => ảnh sẽ thu về theo tỉ lệ để được width = 500px
+      nếu bức ảnh nhỏ hơn container của nó thì nó vẫn giữ nguyên kích thước nội tại của nó - intrisic size*/
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../images/foody-nem chua rán đồng chí.mp4.00_00_09_17.still001-636368533443171119.jpg" alt="">
+  </div>
+</body>
+</html>

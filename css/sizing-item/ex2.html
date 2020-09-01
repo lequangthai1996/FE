@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      border: 5px solid black;
+      width: 1000px;
+    }
+    .inner {
+      width: 60%;
+      border: 5px solid blue;
+      padding: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box wrapper">
+    <div class="box inner">Make me 60% of my parent's width.</div>
+    <div class="description">
+      .wraper: width = 1000px, border-box, border: 5px => width of content = 1000 - 5*2 = 990px
+      .inner: width = 60%, border-box, border: 5px => width = 60% * 990 = 594px, width of content = 594 - 5*2 = 584.
+      nhưng vì padding = 10% , tức là 10% chiều rộng content của cha thằng inner => chiều rộng content của .wrapper => 10%*990 = 99px
+      Suy ra phần content của inner chỉ còn: 584 - 99*2 = 386px.
+    </div>
+  </div>
+      
+</body>
+</html>
