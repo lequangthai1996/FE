@@ -15,9 +15,12 @@
       background-image: url('../images/foody-funny-monkey-xa-dan-223-636148557201568042.jpg');
       /*background-size: 300px 300px */; /* adjust size of image: width: 300px, height: 300px, if width = 150px => repeate 2 image horizontal*/
       background-size: cover; /* browser sẽ làm bức ảnh đủ lớn để phủ hết box area mà vẫn giữ nguyên tỉ lệ bức ảnh, ví dụ ảnh trên
-      có kích thước 1500px * 1500px => 1:1 mà tỉ lệ box là 300px * 400px <=> 3/4 => 3/4 chiều rộng bức ảnh được hiện, còn lại ở ngoài khung hinh box area */
+      có kích thước 1500px * 1500px => 1:1 mà tỉ lệ box là 300px * 400px <=> 3/4 => 3/4 chiều rộng bức ảnh được hiện, còn lại ở ngoài khung hinh box area
+      ta có thể hiểu như thế này, box tỉ lệ 3/4, hình tỉ lệ 1/1 => muốn cover thì làm tròn mẫu hình lên 4/4 => rộng = dài, mà ở đây width và height bức ảnh
+      bằng nhau và = 1000px => lấy số 1000px này làm tròn về 1:1, nếu bức ảnh có width = 100, height = 200 => lấy theo số lớn nhất là 200 => quy đồng lên được 200x400 =>, và khi ướm hình vào
+      thì có 1/4 chiều rộng hình sẽ mất */
       /* background-size: contain; */
-      /* bg-url bg-position / bg-size bg-repeat, bg-color*/
+      /* background: bg-url bg-position / bg-size bg-repeat, bg-color*/
     }
     .b {
       background-image: url('../images/start2.png');

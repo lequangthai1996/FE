@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <pre>
+    initial value là default value, sự sử dụng của initial value tuỳ thuộc liệu properties có được thừa kế -inherited hay không.a
+    Với những inherited properties: thuộc tính có tính thừa kế, initial value chỉ được sử dụng ở root element (tức là html), miễn 
+    là không có specified value được cung cấp. 
+    Ví dụ: color : <a>https://developer.mozilla.org/en-US/docs/Web/CSS/color</a>:  nó là thuộc tính có tính có thừa, initial value chỉ được sử dụng ở thẻ html
+    và biến đổi tuỳ thuộc vào các browser khác nhau.
+    Với những non-inherited properties: thuộc tính ko có tính kế thừa, init value được áp dụng trên tất cả elements (all element),
+    miễn là không có specified value được cung cấp
+    Ví dụ: border: <a>https://developer.mozilla.org/en-US/docs/Web/CSS/border</a>: nó là thuộc tính non-inherited => initial value 
+    được áp dụng trên tất cả element, theo như doc thì border-style: none => tất cả element mặc định ko có border trừ khi ta cung cấp
+    cho nó với specified value: a {border: 1px solid blue}
+
+    _____________________________________________________
+    _____________________________________________________
+
+    CSS inheritance: Trong css , inheritance điều khiển những gì xảy ra khi no value is specified 
+    for a properties on an element.
+    CSS properties can be categoried in 2 type:
+    - inherited properties: is set with giá trị đã được tính toán của parent element.
+    - non-inherited properties: which by default are set to intial value of the property.
+    
+    Inherit properties: khi ko có gía trị chỉ định trên một element, element sẽ lấy gía trị đã được tính toán
+    của thuộc tính trên parent element. chỉ root element(htmtl) nhận được initial value trong property'summary.
+    Ví dụ : p {color : green}
+    <code>
+      <p>This paragraph has <em>emphasized text</em> in it.</p>
+   </code>
+    Thì em sẽ có màu green vì nó ko được set color chỉ định nên sẽ kế thừa màu sắc của cha của nó: <p>
+
+    Non-inherited properties
+    When no value for a non-inherited property has been specified on an element, the element gets the initial value of that property (as specified in the property's summary).
+    
+    A typical example of a non-inherited property is the border property. Given the style rules:
+    
+     p { border: medium solid; }
+    
+    <p>This paragraph has <em>emphasized text</em> in it.</p>
+    The words "emphasized text" will not have a border (since the initial value of border-style is none).
+
+    Notes
+    The inherit keyword allows authors to explicitly specify inheritance. It works on both inherited and non-inherited properties: tức là 
+    khi ta style cho một element: ta set em: border: inherit => border của em nó sẽ thừa kế border của cha.
+
+    You can control inheritance for all properties at once using the all shorthand property, which applies its value to all properties. For example:
+
+    font {
+      all: revert;
+      font-size: 200%;
+      font-weight: bold;
+    }
+     This reverts the style of the font property to the user agent's default unless a user stylesheet exists, in which case that is used instead. Then it doubles the font size and applies a font-weight of "bold".
+    Ở đây nó sẽ hoàn lại style của thuộc tính font tới user agent's defaut: style của trình duyệt trừ khi user stylesheet tồn tạ<i class=""></i>
+
+
+  </pre>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      color: green;
+    }
+    .p-border {
+      border: 5px solid black;
+    }
+    .em-border {
+      border: inherit;
+    }
+  </style>
+</head>
+<body>
+  <p>xin chao toi la <em>le quang thai</em></p>
+  <p class="p-border">Xin chao toi la <em class="em-border">Thai le quang</em></p>
+  <pre>Ta có thể thấy rằng, dù là inherit hay no-inherit property thì ta vẫn có thể set gía trị inherit cho properties đó
+    Ví dụ : border là non-inherit property, nhưng ta set gía trị cho nó là inherit thì nó sẽ nhận gía trị của cha => p => em có border
+  </pre>
+</body>
+</html>
