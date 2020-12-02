@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 100px 100px;
+      grid-gap: 10px;
+    }
+
+    .wrapper > div {
+      background-color: rgb(207,232,220);
+      padding: 1em;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box1">Box1</div>
+    <div class="box2">Box2</div>
+    <div class="box3">Box3</div>
+    <div class="box4">Box4</div>
+    <div class="box5">Box5</div>
+    <div class="box5">Box6</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrapper {
+      display: flex;
+    }
+    .wrapper div {
+      padding: 10px;
+      background-color: rgb(207,232,220);
+      border-radius:4px;
+      flex: 1;
+    }
+    .wrapper .box1 {
+      /*height: 150px;  /* tất cả flex item sẽ stretch (kéo dài) tới chiều cao của item cao nhất => box2,box3 sẽ kéo lên tới chiều
+      cao của box1, */
+      background-color: yellow;
+      flex: 2;
+    }
+    .wrapper .box2 {
+      background-color: aqua;
+    }
+    /*
+    However, if we add display: flex to the parent,
+     the three items now arrange themselves into columns. 
+     This is due to them becoming flex items and being affected by some initial values that flexbox sets on the flex container.
+      They are displayed in a row, because the initial value of flex-direction set on their parent is row. 
+      They all appear to stretch to the height of the tallest item, because the initial value of the align-items property set on their parent is stretch. 
+      This means that the items stretch to the height of the flex container, which in this case is defined by the tallest item.
+       The items all line up at the start of the container, leaving any extra space at the end of the row.
+    */
+    
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box1">box 1</div>
+    <div class="box2">box 2</div>
+    <div class="box3">box 3</div>
+  </div>
+</body>
+</html>
