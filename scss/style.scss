@@ -46,4 +46,88 @@
 .container {
   @include boxShadow;
 }
+.title {
+  background-color: aqua;
+}
+
+$a: 20px;
+$b: $a + 30px;
+#main {
+  margin-bottom: $a;
+}
+
+#foooter {
+  padding: $a;
+}
+
+.btn-submit {
+  width: $b;
+  background-color: red;
+  &:hover {
+    background-color: blue;
+  }
+}
+ 
+.list {
+  li {
+    float: left;
+    margin-right: 10px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+section {
+  width: 300px;
+  font: {
+    family: arial, sans-sefif;
+    size: 16px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 200px;
+  }
+}
+
+.box {
+  background-color: blue;
+  border: 1px solid #f5f5f5;
+}
+.title {
+  @extend .box;
+  padding: 20px;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul {
+  @include reset-list;
+  background-color: #f1f1f1;
+  li {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+}
+@mixin center($w) {
+  margin: 0 auto;
+  width: $w;
+}
+
+
+@function getWidth($totalWidth, $number) {
+  @return $totalWidth/$number;
+}
+
+.list {
+  width: 600px;
+  li {
+    float: left;
+    width: getWidth(600px, 4);
+  }
+}
 

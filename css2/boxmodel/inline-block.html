@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .links-list {
+      display: flex;
+    }
+    .links-list li {
+      margin-right: 1em;
+    }
+
+    .links-list li:last-child {
+      margin-right: -1em;
+    }
+    .links-list a {
+      color: #ffffff;
+      background-color: rgb(179,57,81);
+      padding: 1em 2em;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .links-list a:hover {
+      background-color: rgb(66, 28, 40);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="links-list">
+      <li><a href="">Link one</a></li>
+      <li><a href="">Link two</a></li>
+      <li><a href="">Link three</a></li>
+    </ul>
+  </nav>   
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 500px;
+      height: 300px;
+      border: 1px solid black;
+      background-image: url('../images/start2.png');
+      margin-bottom: 5px;
+    }
+    .box2 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      background-image: url('../images/cach-lam-bun-dau-mam-tom-600x450.jpg');
+      /* background-size: 100px 100px; */
+      /*background-size: cover;*/ /*ảnh có size = width = 60, height = 450 => muôn thấy hết ảnh 
+      mà ko bị crop thì ,nếu width của box = 300 => 300/height = 650/450 => height = 207.9px*/
+      background-size: contain; /*có thể có khoảng trống ở 2 bên trái phải hoặc trên dưới tuỳ theo tỉ lệ bức ảnh, nó
+      sẽ thu nhỏ cho đến khi có phần nào bức ảnh vừa với chiều ngang hoặc dọc*/
+      background-repeat: no-repeat;
+      margin-bottom: 5px;
+    }
+    .box3 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      background-image: url('../images/300-250size.png');
+      /* background-size: 100px 100px; */
+      /*background-size: cover;*/ /*ảnh có size = width = 60, height = 450 => muôn thấy hết ảnh 
+      mà ko bị crop thì ,nếu width của box = 300 => 300/height = 650/450 => height = 207.9px*/
+      background-size: contain; /*có thể có khoảng trống ở top hoặc bottom tuỳ theo tỉ lệ bức ảnh, nó
+      sẽ thu nhỏ theo tỉ lệ của nó cho đến khi vừa với chiều ngang trước, còn chiếu dọc thì ko ưu tiên*/
+      background-repeat: no-repeat;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+
+</body>
+</html>

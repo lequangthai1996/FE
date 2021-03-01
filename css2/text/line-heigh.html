@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .green {
+      line-height: 1.2;
+      border: solid limegreen;
+      /*line-height có tính kế thừa, khi set line-height 1.2 thì tức là line-height của
+      tất cả các line bằng 1.2 font-size của line đó, vì h1 có font-size = 30px nên line-height của nó giờ 
+      là 1.2*30 = 36px, ok giãn cách đẹp. */
+    }
+
+    .red {
+      line-height: 1.2em;
+      border: solid red;
+      /*line-height có tính kế thừa, vì khi set line-height 1.2em => 1.2*16px(16px này là font-size của thằng cha gần nhất 
+      của .red là body) = 18px, áp dụng cho 
+      tất cả các line trong class .red , vì h1 có font-size = 30px mà line-height có 18px nên sẽ bị dồn lại , rất xấu*/
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    .box {
+      width: 18em;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 15px;
+    }
+    p {
+      background-color: #af8888;
+      border: 1px solid black;
+      /*bình thường , line-height của thẻ p = 16px, 2 dòng => 16*2 =32px + border 1*2 = 2px nừa là 36px*/
+      line-height: 1.5; /*1 line = 16*1.5 = 24, 2 dòng => 24*2 = 48 + border 1*2 = 2px => 50px
+      Cộng thêm padding 2*10px = 20px nữa là 70px */
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box green">
+    <h1>Muốn áp dụng line height thì display của element phải là block hoặc inline-block vì nó tôn trọng line-height</h1>
+    Hãy thử với thẻ a và thêm background-color, nó sẽ không bao gồm line-height
+  </div>
+
+  <div class="box red">
+    <h1>Avoid unexpected results by using unitless line-height.</h1>
+    length and percentage line-heights have poor inheritance behavior ...
+  </div>
+  <br><br>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo qui veritatis eos eum. Voluptate, veniam esse earum suscipit quia impedit delectus aliquam autem modi, doloremque libero a veritatis nemo consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus vel voluptate fuga, omnis, nostrum aut odio voluptatibus et rem saepe laboriosam odit labore modi consectetur pariatur? Enim, nobis iste! Maxime.</p>
+</body>
+
+</html>

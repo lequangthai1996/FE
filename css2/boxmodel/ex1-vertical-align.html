@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    li {
+      list-style-type: none;
+    }
+    p,ul {
+      border: 2px solid rebeccapurple;
+      padding: 0.5em;
+    }
+
+    li, .block {
+      border: 2px solid blue;
+      padding: 0.5em;
+    }
+    ul {
+      display: inline-flex;
+    }
+    .block {
+      display: block;
+    }
+    strong {
+      vertical-align: bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <p>I am a paragraph. A short one.</p>
+  <ul>
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li>Item Three</li>
+  </ul>
+  <strong>This is strong</strong>
+  <p style="display: inline; vertical-align: bottom;">This is inline paragraph, vertical border don't push other element, horizontal border push other element that it will overlap</p>
+  <p>I am another paragraph. Some of the <span class="block">words</span> have been wrapped in a <span>span
+      element</span>
+  </p>
+
+</body>
+
+</html>

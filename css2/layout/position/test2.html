@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Basic document flow</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+      *::after, *::before {
+        box-sizing: inherit;
+      }
+      body {
+        width: 500px;
+        margin: 50px auto 0px;
+        position: relative;
+        border: 5px solid black;
+        padding: 20px;
+      }
+
+      p {
+        background: aqua;
+        border: 3px solid blue;
+        padding: 10px;
+      }
+
+      span {
+        background: red;
+        border: 1px solid black;
+      }
+      .positioned {
+        /* position: relative; /*nó sẽ giãn cách so với chính nó, tức là vị trí normal của nó*/
+        position: absolute; /*Nó sẽ trôi khỏi phần normal flow, element khác sẽ chiếm vị trí normal của nó .Nếu có thuộc tính margin, ta bỏ qua thuộc tính này trước, để định vi postion element với containing block
+        trước(nếu ko có element nào làm cha thì nó sẽ lấy viewport làm cha) ví dụ, top : 0px , left: 0px thì nó sẽ ở ngay bên lề trái trên của html, sau đó nếu có margin thì nó sẽ margin
+        từ vị trí đó so với 2 lề top và left đó, về width, nếu containing element của nó body hoặc element khác thì width của
+        nó ko vượt quá width của containing element của nó, ví dụ ta left: 250px, mà body element có width 500px thì nó chỉ còn 250px*/
+        background: rgb(252, 252, 249);
+        top: 30px;
+        left: 30px;
+      }
+
+      p:nth-of-type(1) {
+        position: absolute;
+        background: lime;
+        top: 10px;
+        left: 50px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body >
+    <h1>Basic document flow</h1>
+
+    <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+
+    <p class="positioned">By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+
+    <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+
+    <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="https://media.prod.mdn.mozit.cloud/attachments/2016/05/19/13360/28f21c66e316287de743a58fdcc1e193/long.jpg"></p>
+
+  </body>
+</html>

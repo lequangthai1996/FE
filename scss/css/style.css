@@ -1,3 +1,54 @@
 .container {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   box-shadow: 0rem 0.28571rem 0.57143rem rgba(0, 0, 0, 0.1); }
+
+.title {
+  background-color: aqua; }
+
+#main {
+  margin-bottom: 20px; }
+
+#foooter {
+  padding: 20px; }
+
+.btn-submit {
+  width: 50px;
+  background-color: red; }
+  .btn-submit:hover {
+    background-color: blue; }
+
+.list li {
+  float: left;
+  margin-right: 10px; }
+  .list li:last-child {
+    margin: 0; }
+
+section {
+  width: 300px;
+  font-family: arial, sans-sefif;
+  font-size: 16px; }
+  @media only screen and (max-width: 768px) {
+    section {
+      width: 200px; } }
+
+.box, .title {
+  background-color: blue;
+  border: 1px solid #f5f5f5; }
+
+.title {
+  padding: 20px; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f1f1f1; }
+  ul li {
+    padding: 10px;
+    border: 1px solid #ccc; }
+
+.list {
+  width: 600px; }
+  .list li {
+    float: left;
+    width: 150px; }

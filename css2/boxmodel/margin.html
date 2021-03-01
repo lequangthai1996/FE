@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    .box {
+      margin-right: 30px;
+      margin-bottom: 40px;
+      margin-left: 4em;
+      padding: 2em;
+      border: 1px solid black;
+    }
+    p {
+      border: 1px solid black;
+      padding: 1em;
+    }
+    /* .margin-collap p:first-child {
+      margin-bottom: 20px;
+    } */
+    .margin-collap p:first-child {
+      margin-bottom: -16px;
+    }
+    .margin-collap p:last-child {
+      margin-top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">Change my margin.</div>
+    <div class="margin-collap">
+      <p>p1</p>
+      <p>p2</p>
+    </div>
+  </div>  
+</body>
+</html>
